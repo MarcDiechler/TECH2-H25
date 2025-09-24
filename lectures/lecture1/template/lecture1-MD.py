@@ -18,3 +18,19 @@ Tasks
 4.  Use the notebook lecture1-benchmark.ipynb to benchmark your implementation 
     against NumPy's argmax().
 """
+
+import numpy as np
+def argmax(lst):
+    N = len(lst)
+    imax = 0
+    value_max = - np.inf
+    for i in range(N):
+        value = lst[i]
+        if value > value_max:
+            imax = 1 
+            value_max = value
+    return imax 
+
+values = [2, 3, -1, 7, 4]
+i = argmax(values)
+print(f"Index of maximum value: {i}")
