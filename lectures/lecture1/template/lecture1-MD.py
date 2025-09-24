@@ -22,15 +22,22 @@ Tasks
 import numpy as np
 def argmax(lst):
     N = len(lst)
+    if N == 0:
+        raise ValueError("Empty Lists are not supported")
     imax = 0
     value_max = - np.inf
     for i in range(N):
         value = lst[i]
         if value > value_max:
-            imax = 1 
+            imax = i 
             value_max = value
     return imax 
 
-values = [2, 3, -1, 7, 4]
-i = argmax(values)
-print(f"Index of maximum value: {i}")
+# values = [2, 3, -1, 7, 4]
+values = []
+
+try :
+    i = argmax(values)
+    print(f"Index of maximum value: {i}")
+except ValueError:
+    print("Empty list")
